@@ -6,7 +6,7 @@ const prizes = [
  {name:"Téléviseur Smart TV",tag:"ÉQUIPEMENT MAISON",image:"https://images.philips.com/is/image/philipsconsumer/6ba2f711e48e4cbdbd5cafb300f38ec9-P3D-global-069?%24png%24=&hei=700&wid=700",alt:"Téléviseur écran plat"},
  {name:"PlayStation 5",tag:"LOISIRS",image:"https://sellconnectug.com/wp-content/uploads/2023/12/playstation-5-console-ps5.jpg",alt:"Console PlayStation 5 et manette"},
  {name:"Ordinateur portable",tag:"TECHNOLOGIE",image:"https://sammanpc.com/cdn/shop/collections/used-laptops-jordan-amman_webp.png?v=1783950069",alt:"Ordinateur portable ouvert"},
- {name:"Vélo tout-terrain",tag:"MOBILITÉ",image:"https://www.gettyimages.com/",alt:"Vélo tout-terrain noir"}
+ {name:"Vélo tout-terrain",tag:"MOBILITÉ",image:"https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=1000&auto=format&fit=crop",alt:"Vélo tout-terrain noir"}
 ];
 export default function App(){
  const [view,setView]=useState("home"),[form,setForm]=useState({name:"",city:"",area:"",phone:"",whatsapp:true,method:"mtn",reference:""});
