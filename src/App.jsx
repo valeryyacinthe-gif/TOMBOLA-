@@ -25,7 +25,10 @@ export default function App() {
   const [view, setView] = useState("home");
   const [notice, setNotice] = useState("");
 
-  useEffect(() => onAuthStateChanged(auth, setUser), []);
+  useEffect(() => {
+    if (!auth) return;
+    return onAuthStateChanged(auth, setUser);
+  }, []);
   useEffect(() => {
     if (!firebaseReady) return;
     getDocs(query(collection(db, "editions"), where("status", "in", ["published", "preparation"]), limit(1)))
@@ -39,7 +42,6 @@ export default function App() {
       .then(s => setMyEntries(s.docs.map(d => ({ id: d.id, ...d.data() })))).catch(() => setMyEntries([]));
   }, [user]);
 
-  const isAdmin = Boolean(user?.getIdTokenResult && user?.adminClaim);
   const dateLabel = useMemo(() => {
     if (!edition.drawDate) return "Date à confirmer";
     return new Date(edition.drawDate + "T12:00:00").toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
